@@ -1,0 +1,41 @@
+{% extends 'account/base_entrance.html' %}
+{% load i18n %}
+{% load allauth account socialaccount %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="container mt-4 h-100">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+        <div class="card" style="padding: 20px;">
+          <div class="card-body">
+            <h1 class="text-center fs-2">{% trans "Sign In" %}</h1>
+            <p class="text-center">Use this form to sign in to your account.</p>
+            {% url 'account_login' as login_url %}
+            <form method="post" class="mt-4" action="{{ login_url }}">
+              {% csrf_token %}
+              {% bootstrap_form form %}
+              <div class="row">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary w-100">{% trans "Sign In" %}</button>
+                </div>
+              </div>
+            </form>
+            <div class="justify-center mx-3">
+                <a href="{% provider_login_url 'google' %}">
+                    <button class="btn btn-light my-3 w-50">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" height="20" class="me-2"> Sign in with Google
+                    </button>
+                </a>
+            </div>                            
+            {% if user.is_authenticated %}
+              <p class="text-center mt-4">Welcome back, {{ user.username|capfirst }}!</p>
+            {% else %}
+              <p class="text-center mt-4">If you don't have an account, please <a href="{% url 'account_signup' %}">register</a>.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
