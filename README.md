@@ -4,12 +4,12 @@ Find out M-Pesa charges with this form.
 
 ## Features
 
-- Calculate M-Pesa fees for various transaction types:
-- Sending to Registered M-Pesa Users
-- Withdrawing from an Agent
-- Sending to Unregistered Users
-- Sending to Other Networks
-- ATM Withdrawal
+- Calculate M-Pesa fees for various transaction types like:
+    - Sending to Registered M-Pesa Users
+    - Withdrawing from an Agent
+    - Sending to Unregistered Users
+    - Sending to Other Networks
+    - ATM Withdrawal
 
 ## How to Use
 
