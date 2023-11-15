@@ -94,7 +94,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'offline',
         },
         'OAUTH_PKCE_ENABLED': True,
-    }
+    },
 }
 
 WSGI_APPLICATION = 'core.wsgi.application'

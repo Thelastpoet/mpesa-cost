@@ -1,6 +1,7 @@
 {% extends 'account/base_entrance.html' %}
 {% load i18n %}
 {% load allauth account socialaccount %}
+{% providers_media_js %}
 {% load django_bootstrap5 %}
 
 {% block content %}
@@ -23,7 +24,7 @@
             </form>
             <div class="justify-center mx-3">
                 <a href="{% provider_login_url 'google' %}">
-                    <button class="btn btn-light my-3 w-50">
+                    <button class="btn btn-light my-3 w-100">
                         <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" height="20" class="me-2"> Sign in with Google
                     </button>
                 </a>
