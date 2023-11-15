@@ -21,11 +21,20 @@
                 </div>
               </div>
             </form>
-            {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+            <div class="text-center my-3">
+                ------------ OR ------------
+            </div>
+            <div class="justify-center mx-3">
+                <a href="{% provider_login_url 'google' %}">
+                    <button class="btn btn-light my-3 w-100">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" height="20" class="me-2"> Sign in with Google
+                    </button>
+                </a>
+            </div>
             {% if user.is_authenticated %}
               <p class="text-center mt-4">Welcome, {{ user.username|capfirst }}! You're already signed in.</p>
             {% else %}
-              <p class="text-center mt-4">If you already have an account, please <a href="{% url 'account_login' %}">sign in</a>.</p>
+              <p class="text-center mt-4">Have an account? <a href="{% url 'account_login' %}">Sign In</a>.</p>
             {% endif %}
           </div>
         </div>

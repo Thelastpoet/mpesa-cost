@@ -4,24 +4,30 @@
     {% trans "Sign Out" %}
 {% endblock head_title %}
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Out" %}
-    {% endelement %}
-    <p>{% trans 'Are you sure you want to sign out?' %}</p>
-    {% url 'account_logout' as action_url %}
-    {% element form method="post" action=action_url no_visible_fields=True %}
-        {% slot body %}
-            {% csrf_token %}
-            {% if redirect_field_value %}
+  <div class="container mt-4 h-100">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+        <div class="card" style="padding: 20px;">
+          <div class="card-body">
+            <h1 class="text-center fs-2">{% trans "Sign Out" %}</h1>
+            <p class="text-center">{% trans 'Are you sure you want to sign out?' %}</p>
+            {% url 'account_logout' as action_url %}
+            <form method="post" class="mt-4" action="{{ action_url }}">
+              {% csrf_token %}
+              {% if redirect_field_value %}
                 <input type="hidden"
                        name="{{ redirect_field_name }}"
                        value="{{ redirect_field_value }}" />
-            {% endif %}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" %}
-                {% trans 'Sign Out' %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
+              {% endif %}
+              <div class="row">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary w-100">{% trans 'Sign Out' %}</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock content %}
