@@ -29,11 +29,13 @@ Developers are welcome to contribute. Here's how you can set up a development en
    ```bash
    python3 -m venv env
    source env/bin/activate
-3. pip install -r requirements.txt
-4. Set local .env
-5. python manage.py makemigrations and python manage.py migrate
-6. python manage.py runserver
-7. Access at http://127.0.0.1:8000/calculate-fee/
+   pip install -r requirements.txt
+3. Set local .env
+4. ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py runserver
+5. Access at http://127.0.0.1:8000/calculate-fee/
 
 ## Future Improvements
 
