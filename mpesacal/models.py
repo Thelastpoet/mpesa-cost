@@ -18,7 +18,7 @@ class MpesaFee(models.Model):
         return f"{self.transaction_type} ({self.min_amount}-{self.max_amount}): {self.fee}"
 
 class Transaction(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     fee = models.DecimalField(max_digits=10, decimal_places=2)
     transaction_type = models.CharField(max_length=255, choices=MpesaFee.TRANSACTION_TYPES, null=True)

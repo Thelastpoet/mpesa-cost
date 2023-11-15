@@ -29,7 +29,8 @@ def calculate_fee(request):
         if form.is_valid():
             transaction_type = form.cleaned_data['transaction_type']
             fee = calculate_mpesa_fee(form.cleaned_data['amount'], transaction_type)
-            Transaction.objects.create(user=request.user, amount=form.cleaned_data['amount'], fee=fee, transaction_type=transaction_type)
+            user = request.user if request.user.is_authenticated else None
+            Transaction.objects.create(user=user, amount=form.cleaned_data['amount'], fee=fee, transaction_type=transaction_type)            
     else:
         form = TransactionForm()
     transaction_type_description = transaction_type_descriptions[transaction_type] if transaction_type else None
