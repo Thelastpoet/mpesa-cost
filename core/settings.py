@@ -79,11 +79,11 @@ TEMPLATES = [
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
-        "APPS": [
+        'APPS': [
             {
-                "client_id": "774701858415-kd0qps5dvbs9225hle7p9f2sqtabh4s9.apps.googleusercontent.com",
-                "secret": "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",
-                "key": ""
+                'client_id': getenv('GOOGLE_CLIENT_ID'),
+                'secret': getenv('GOOGLE_SECRET_KEY'),
+                'key': ''
             },
         ],
         'SCOPE': [
