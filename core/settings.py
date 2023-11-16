@@ -163,9 +163,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 if DEVELOPMENT_MODE is True:
-    STATIC_URL = 'static/'
+    STATIC_URL = '/static/'
     STATIC_ROOT = BASE_DIR / 'static'
-    MEDIA_URL = 'media/'
+    MEDIA_URL = '/media/'
     MEDIA_ROOT = BASE_DIR / 'media'
 else:
     AWS_S3_ACCESS_KEY_ID = getenv('AWS_S3_ACCESS_KEY_ID')
@@ -184,6 +184,9 @@ else:
         'default': {'BACKEND': 'storages.backends.s3.S3Storage'},
         'staticfiles': {'BACKEND': 'storages.backends.s3.S3Storage'}
     }
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_MEDIA_LOCATION}/'
+
 
 # Default primary key field type
 
