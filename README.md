@@ -17,8 +17,7 @@ Find out M-Pesa charges with this form.
 2. Select the transaction type and enter the amount.
 3. Click "Calculate" to get the M-Pesa fee for your transaction.
 
-You can see and use the application at [https://nasonga.com/mpesa-charges/](https://nasonga.com/mpesa-charges/)
-.
+You can see and use the application at [https://apps.nasonga.com/calculate-fee/](https://apps.nasonga.com/calculate-fee/).
 
 ## Development
 
@@ -45,4 +44,4 @@ Developers are welcome to contribute. Here's how you can set up a development en
 
 ## License
 
-This project is licensed under the GNU General Public License (GPL) version 3.
+This project is licensed under the GNU General Public License (GPL) version 3. Data source is You can see and use the application at [https://nasonga.com/mpesa-charges/](https://nasonga.com/mpesa-charges/).
