@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.core.exceptions import ValidationError
 from .models import Transaction, MpesaFee
 from .forms import TransactionForm
 
