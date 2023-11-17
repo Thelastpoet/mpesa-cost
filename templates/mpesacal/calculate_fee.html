@@ -20,8 +20,11 @@
               </div>
             </form>
             {% if fee %}
-              <div class="alert alert-info mt-4" style="text-align: center;">The Charge for {{ transaction_type }} is: <strong>{{ fee }}</strong> Kenyan Shillings.</div>
+              <div class="alert alert-info mt-4" style="text-align: center;">
+                To {{ transaction_type }} Ksh. {{ amount }}. You will be charged: <strong>{{ fee }}</strong> Kenyan Shillings.
+              </div>
             {% endif %}
+
             {% if user.is_authenticated %}
               <p class="text-center mt-4">Hey, {{ user.username|capfirst }}! You can view your past transactions in your dashboard.</p>
             {% else %}

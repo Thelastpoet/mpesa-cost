@@ -44,4 +44,4 @@ Developers are welcome to contribute. Here's how you can set up a development en
 
 ## License
 
-This project is licensed under the GNU General Public License (GPL) version 3. Data source is You can see and use the application at [https://nasonga.com/mpesa-charges/](https://nasonga.com/mpesa-charges/).
+This project is licensed under the GNU General Public License (GPL) version 3. Data source is available at [https://nasonga.com/mpesa-charges/](https://nasonga.com/mpesa-charges/).

@@ -3,11 +3,11 @@ from django.db import models
 
 class MpesaFee(models.Model):
     TRANSACTION_TYPES = [
-        ('registered_users', 'Send Money to Another M-pesa'),
-        ('agent_withdrawal', 'Withdraw from Agent'),
-        ('unregistered_users', 'Send Money to Unregistered User'),
-        ('atm_withdrawal', 'ATM Withdrawal'),
-        ('other_network_users', 'Send Money to Another Network')
+        ('registered_users', 'Send to another M-Pesa'),
+        ('agent_withdrawal', 'Withdraw from agent'),
+        ('unregistered_users', 'Send to unregistered user'),
+        ('atm_withdrawal', 'ATM withdrawal'),
+        ('other_network_users', 'Send to another network')
     ]
     transaction_type = models.CharField(max_length=255, choices=TRANSACTION_TYPES)
     min_amount = models.DecimalField(max_digits=10, decimal_places=2)
